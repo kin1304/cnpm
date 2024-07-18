@@ -1,0 +1,101 @@
+﻿@model IEnumerable<BunDau.Models.ProductCategory>
+@{
+    ViewBag.Title = "Danh mục sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/Admin/Index" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="Admin/ProductCategory/Index" class="nav-link">@ViewBag.Title</a>
+        </li>
+    </ul>
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Quản lý danh mục sản phẩm</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">@ViewBag.Title</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Danh sách danh mục sản phẩm</h3>
+
+            <div class="card-tools">
+                <a href="/admin/productcategory/add" class="btn btn-primary">Thêm mới</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tiêu Đề</th>
+                        <th>Icon</th>
+                        <th style="width:250px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model != null && Model.Any())
+                    {
+                        int i = 1;
+                        foreach (var item in Model)
+                        {
+
+                    <tr>
+                        <td>@i</td>
+                        <td>@item.Title</td>
+                        <td>@item.Icon</td>
+                        @*<td class="text-center">
+            <a href="#" data-id="@item.ID" class="btnActive" >@Html.Raw(strCheck)</a>
+        </td>*@
+                        <td>
+                            <a href="/admin/productcategory/detail/@item.ID" class="btn btn-sm ">Chi tiết</a>
+                            <a href="/admin/productcategory/edit/@item.ID" class="btn btn-sm btn-primary">Sửa</a>
+                            <a href="/admin/productcategory/delete/@item.ID" class="btn btn-sm btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                            i++;
+                        }
+
+
+                    }
+                    else
+                    {
+                        <tr colspan="4"><td> Không có bản ghi nào!</td></tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->

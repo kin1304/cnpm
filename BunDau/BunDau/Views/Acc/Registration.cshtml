@@ -1,0 +1,41 @@
+﻿@{ ViewBag.Title = "Regiter";
+    Layout = "~/Views/Shared/_MainLayout.cshtml"; }
+<link href="~/CSS/mystyle.css" rel="stylesheet" />
+<div class="form-wrap">
+
+    @using (Html.BeginForm("Login", "Acc"))
+    {
+@Html.ValidationSummary(true)
+
+                <div class="wrap-head">
+                    <h3>Đăng Ký Thành Viên</h3>
+                    <h2 style="color: red; font-size: small; text-align: center">@ViewBag.ThongBao</h2>
+
+                    <div class="wrap-input">
+                        @*<label for="name" class="form-label">Email:</label>*@
+                        <p></p>
+                        <input type="text" placeholder="UserName " class="form-control" id="name" name="UserName" required>
+                    </div>
+                </div>
+                                <div class="wrap-input">
+                                    @*<label for="name" class="form-label">Email:</label>*@
+                                    <p></p>
+                                    <input type="text" placeholder="Email " class="form-control" id="name" name="EmailCus" required>
+                                </div>
+                                                <div class="wrap-input">
+                                                    @*<label for="pwd" class="form-label">Mật khẩu :</label>*@
+                                                    <p></p>
+                                                    <input type="password" placeholder="Mật khẩu" class="form-control" id="pwd" name="PassCus" required>
+                                                </div>
+                                                                <div class="wrap-input">
+                                                                    @*<label for="name" class="form-label">Email:</label>*@
+                                                                    <p></p>
+                                                                    <input type="password" placeholder="RetypePassword" class="form-control" id="name" name="RetypePassword" required>
+                                                                </div>
+                                                                                <button type="submit" class="btn">Đăng Ký</button>
+                                                                                                <h5>Bạn có thể đăng nhập bằng</h5>
+                                                                                                                <div class="two-select">
+                                                                                                                    <button type="submit" class="btn-gg">Google</button>
+                                                                                                                    <button type="submit" class="btn-fb">Facebook</button>
+                                                                                                                </div>}
+</div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="33daf24e5c604d599ba6d3fd44ac28fb" Name="Diagram1">
+        <EntityTypeShape EntityType="DoAn_BunDauModel.AdminUser" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_BunDauModel.Category" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_BunDauModel.Customer" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_BunDauModel.OrderDetail" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_BunDauModel.OrderPro" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_BunDauModel.Product" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DoAn_BunDauModel.ProductCategory" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="DoAn_BunDauModel.FK_Pro_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_BunDauModel.FK__OrderPro__IDCus__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_BunDauModel.FK__OrderDeta__IDOrd__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_BunDauModel.FK__OrderDeta__IDPro__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="DoAn_BunDauModel.FK_Pro_ProCate" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

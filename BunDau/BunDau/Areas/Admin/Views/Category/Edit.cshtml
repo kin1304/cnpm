@@ -1,0 +1,85 @@
+﻿@model BunDau.Models.Category
+@{
+    ViewBag.Title = "Cập nhật danh mục";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section naviheader{
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/Areas/Admin" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="~/Areas/Admin/Views/Category/Index.cshtml" class="nav-link">Danh mục</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="#" class="nav-link">Cập nhật</a>
+        </li>
+    </ul>
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Cập nhật danh mục</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Danh mục</a></li>
+                    <li class="breadcrumb-item active">Cập nhật</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="content">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"> Cập nhật danh mục</h3>
+        </div>
+        <div class="card-body">
+            <div class="bs-stepper-content">
+                <!-- your steps content here -->
+                @using (Html.BeginForm("Edit", "Category", FormMethod.Post, new { }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(false);
+                    @Html.HiddenFor(x => x.Id);
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">ID danh mục</label>
+                            @Html.TextBoxFor(x => x.IDCate, new { @class = "form-control", @placeholder = "ID danh mục" })
+                            @Html.ValidationMessageFor(x => x.IDCate, null, new { @class = "text-danger" })
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Tên danh mục</label>
+                            @Html.TextBoxFor(x => x.NameCate, new { @class = "form-control", @placeholder = "Tên danh mục" })
+                            @Html.ValidationMessageFor(x => x.NameCate, null, new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <a href="/admin/category" class="btn btn-danger">Quay lại</a>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+
+        <div class="card-footer">
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+

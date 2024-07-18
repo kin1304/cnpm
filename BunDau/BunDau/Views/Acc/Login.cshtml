@@ -1,0 +1,36 @@
+﻿@{ ViewBag.Title = "Login";
+                Layout = "~/Views/Shared/_MainLayout.cshtml"; }
+
+<link href="~/CSS/mystyle.css" rel="stylesheet" />
+<div class="form-wrap">
+
+    @using (Html.BeginForm("Login", "Acc"))
+    {
+@Html.ValidationSummary(true)
+
+                <div class="wrap-head">
+                    <h3>Đăng nhập</h3>
+                    <h2 style="color: red; font-size: small; text-align: center">@ViewBag.ThongBao</h2>
+
+                </div>
+                                <div class="wrap-input">
+                                    @*<label for="name" class="form-label">Email:</label>*@
+                                    <p></p>
+                                    <input type="text" placeholder="Email " class="form-control" id="name" name="EmailCus" required>
+                                </div>
+                                                <div class="wrap-input">
+                                                    @*<label for="pwd" class="form-label">Mật khẩu :</label>*@
+                                                    <p></p>
+                                                    <input type="password" placeholder="Mật khẩu" class="form-control" id="pwd" name="PassCus" required>
+                                                </div>
+                                                                <div class="forget-pass">
+                                                                    <label><a href="">Quên mật khẩu ?</a></label>
+                                                                </div>
+                                                                                <button type="submit" class="btn">Đăng nhập</button>
+                                                                                                <div class="register">Bạn chưa có tài khoản ? @Html.ActionLink("Đăng ký ngay!", "Registration")</div>
+                                                                                                                <div class="or" style="text-align:center; color:darkgrey">Hoặc đăng nhập bằng</div>
+                                                                                                                                <div class="two-select">
+                                                                                                                                    <button type="submit" class="btn-gg">Google</button>
+                                                                                                                                    <button type="submit" class="btn-fb">Facebook</button>
+                                                                                                                                </div>}
+</div>
